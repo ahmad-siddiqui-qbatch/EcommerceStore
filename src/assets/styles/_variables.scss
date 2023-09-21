@@ -1,0 +1,46 @@
+// Colors
+
+$theme-colors : (
+  'primary' : #41cde2,
+  'secondary' : #ff4e00,
+);
+@import '~bootstrap/scss/bootstrap';
+
+$primary : #41cde2;
+$secondary : #ff4e00;
+
+$black: #000000;
+$white: #fff;
+$yellow: #ffd902;
+
+$gray-50: #ececec;
+$gray-100: #cdcdcd;
+$gray-200: #c0bebe;
+$gray-500: #868686;
+
+
+// Spacings
+
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 12px;
+$spacing-4: 16px;
+$spacing-5: 20px;
+$spacing-6: 24px;
+$spacing-10: 40px;
+$spacing-20: 80px;
+
+// Font sizes
+
+$text-xs: 10px;
+$text-base: 14px ;
+$text-sm: 20px;
+$text-md : 30px;
+$text-lg : 50px;
+$text-xl : 70px;
+
+
+// Font Weight
+
+$font-semibold: 600;
+$font-bold: 700;

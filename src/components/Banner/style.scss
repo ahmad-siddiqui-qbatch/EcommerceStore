@@ -1,0 +1,35 @@
+@import "../../assets/styles/style.scss";
+
+.banner{
+  margin-top: -95px;
+  .slick-slide{
+    min-height: 100vh;
+    position: relative;
+    .container{
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    img{
+      position: absolute;
+      z-index: -1;  
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+    }
+    .slider-inner{
+      padding: $spacing-20 0;
+      height: 100%;
+      text-align: left;
+    }
+    .banner-heading{
+      max-width: 400px;
+      padding: $spacing-3 0 $spacing-4;
+    }
+  }
+
+  .slick-dots{
+    bottom: 8px;
+  }
+}

@@ -1,0 +1,54 @@
+@import "../../assets/styles/style.scss";
+
+.category-sidebar {
+  border: 1px solid $gray-100;
+  padding: $spacing-3 ;
+  margin-bottom: $spacing-2;
+  text-align: left;
+  ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+    margin-bottom: $spacing-1;
+    li {
+      font-size: $text-base;
+      background-color: lighten($secondary, 40%);
+      margin-bottom: $spacing-2;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      a {
+        color: $black;
+        padding: $spacing-2;
+        display: block;
+        &.active{
+          color: $secondary;
+        }
+      }
+      &:hover{
+        a {
+          color: $secondary;
+        }
+      }
+
+    }
+  }
+}
+
+.type-sidebar {
+  border: 1px solid $gray-100;
+  padding: $spacing-3;
+  margin-bottom: $spacing-2;
+  text-align: left;
+  ul {
+    text-align: left;
+    padding: 0;
+    padding-left: $spacing-4;
+    margin-bottom: 0;
+    li {
+      a {
+        color: $black;
+      }
+    }
+  }
+}

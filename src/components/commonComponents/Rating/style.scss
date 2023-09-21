@@ -1,0 +1,11 @@
+@import "../../../assets/styles/style.scss";
+
+.rating{
+  display: flex;
+  justify-content: center;
+  color: $gray-200;
+  padding: $spacing-4 0;
+  .filled{
+    color: $yellow;
+  }
+}

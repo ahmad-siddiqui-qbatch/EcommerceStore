@@ -1,0 +1,28 @@
+@import "../../assets/styles/style.scss";
+
+.product-detail{
+  padding: $spacing-10 0 $spacing-20 0;
+  border-bottom: 1px solid $gray-100;
+  margin-bottom: $spacing-10;
+  .product-image{
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .product-price{
+    display: block;
+    .old-price{
+      color: $gray-500;
+      text-decoration: line-through;
+    }
+    .new-price{
+      color: $secondary;
+      font-weight: $font-semibold;
+    }
+  }
+  .product-details{
+    text-align: left;
+  }
+}

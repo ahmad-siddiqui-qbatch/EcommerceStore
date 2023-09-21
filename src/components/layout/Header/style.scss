@@ -1,0 +1,148 @@
+@import "../../../assets/styles/style.scss";
+
+header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  z-index: 2;
+  position: relative;
+  .divider {
+    height: 20px;
+    width: 1px;
+    background-color: $gray-100;
+    margin: 0 $spacing-3;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: $gray-500;
+      i {
+        color: $gray-500;
+        font-size: $text-base;
+        padding-right: $spacing-2;
+        position: relative;
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    .form-select {
+      background-color: transparent;
+      color: $gray-500;
+      padding: 0 $spacing-6 0 0;
+      border: none;
+      background-position: right 0rem center;
+      width: auto;
+      text-align: right;
+      font-size: $text-base;
+      cursor: pointer;
+    }
+  }
+}
+
+.navbar {
+  border: 1px solid $gray-100;
+  border-bottom: 0;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  .navbar-brand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+  @include media-max-width(md) {
+    .navbar-collapse {
+      position: absolute;
+      z-index: 2;
+      background: $white;
+      width: 100%;
+      top: 48px;
+      @include box-shadow;
+      padding: $spacing-2 $spacing-5;
+    }
+  }
+  .navbar-toggler {
+    position: relative;
+    z-index: 2;
+    border: none;
+    padding: 0;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .navbar-nav {
+    .nav-link {
+      padding-right: $spacing-6;
+      padding-left: 0;
+      color: $black;
+      position: relative;
+      z-index: 2;
+      &:hover,
+      &.active {
+        color: $secondary;
+      }
+      @include media-max-width(md) {
+        text-align: left;
+      }
+    }
+  }
+  .form {
+    padding-left: $spacing-6;
+    position: relative;
+    z-index: 2;
+    @include media-max-width(md) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .search-field {
+      border-radius: 0;
+      border: 1px solid $gray-500;
+      border-right: 0;
+      &::placeholder {
+        font-size: $text-base;
+        color: $gray-200;
+      }
+    }
+    .icon-button {
+      background-color: transparent;
+      border: none;
+      fill: $black;
+      position: relative;
+      .badge {
+        background-color: $secondary;
+        border-radius: 50px;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 1px;
+        left: $spacing-5;
+        font-size: $text-xs;
+      }
+      i {
+        color: $black;
+        font-size: 16px;
+      }
+    }
+  }
+}

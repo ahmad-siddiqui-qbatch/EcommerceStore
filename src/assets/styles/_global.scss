@@ -1,0 +1,45 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: $text-base;
+}
+
+.form-select{
+  &:focus{
+    box-shadow: none;
+  }
+}
+h1{
+  font-size: $text-xl;
+  line-height: 72px;
+  font-weight: $font-bold;
+}
+h2{
+  font-size: $text-lg;
+  font-weight: $font-semibold;
+}
+h4{
+  font-size: $text-sm;
+}
+h5{
+  font-size: $text-base;
+  font-weight: bold;
+}
+.btn{
+  border-radius: 0;
+}
+.btn-secondary{
+  color: $white;
+  padding: $spacing-4 $spacing-10;
+}
+.form-control{
+  border-radius: 0;
+}
+a{
+  text-decoration: none;
+}
+.product{
+  scroll-behavior: smooth;
+  scroll-margin-top: 0;
+}
