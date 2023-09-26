@@ -1,10 +1,10 @@
 import React from 'react';
 import Products from '../components/commonComponents/Products';
-import Categories from '../components/Categories/sale';
+import CategoryShopSidebar from '../layout/Categories/shop';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
-const Sale = () => {
+const Shop = () => {
   const { category, type } = useParams();
 
   return (
@@ -12,18 +12,19 @@ const Sale = () => {
       <Container>
         <Row>
           <Col lg='2'>
-            <Categories />
+            <CategoryShopSidebar  />
           </Col>
           <Col>
             {category ? (
-              <Products page sale category={category} type={type} />
+              <Products page category={category} type={type} />
             ) : (
-              <Products page sale/>
-            )}</Col>
+              <Products page/>
+            )}
+            </Col>
         </Row>
       </Container>
     </div>
   );
 };
 
-export default Sale;
+export default Shop;

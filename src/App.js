@@ -2,18 +2,21 @@ import React from 'react';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
+import Header from './layout/Header';
+import Footer from './layout/Footer';
 import Home from './pages/Home';
-import Shop from './pages/Shop';
-import Sale from './pages/Sale';
+import Shop from './pages/ShopPage';
+import Sale from './pages/SalePage';
 import ProductDetails from './pages/ProductsDetail'; 
 import data from './data.json';
+import { CartProvider } from './components/Cart/CartContext';
+import Cart from './pages/CartPage';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <CartProvider>
         <Header />
         <div className='content'>
           <Routes>
@@ -29,6 +32,12 @@ function App() {
               }
             />
             <Route
+              path="/sale/:category/:type"
+              element={
+                <Sale />
+              }
+            />
+            <Route
               path="/products/:productId"
               element={
                 <ProductDetails
@@ -41,9 +50,11 @@ function App() {
                 />
               }
             />
+            <Route path='/cart' element={<Cart/>} />
           </Routes>
         </div>
         <Footer />
+        </CartProvider>
       </Router>
     </div>
   );

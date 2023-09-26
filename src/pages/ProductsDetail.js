@@ -27,8 +27,8 @@ const ProductsDetail = () => {
           <button className='btn btn-secondary mt-5 me-auto' onClick={handleGoBack}><i className="fa-solid fa-arrow-left pe-3"></i>Go Back</button>
         </div>
         <ProductDetail />
-        <h2>Related Products</h2>
-        <Products section category={selectedProduct.category} />
+        <h2 className='pb-4'>Related Products</h2>
+        <Products sectionProductCount={5} section related category={selectedProduct.category} type={selectedProduct.type}/>
       </Container>
     </div>
   );

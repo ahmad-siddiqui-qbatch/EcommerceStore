@@ -1,12 +1,12 @@
-@import "../../assets/styles/style.scss";
+@import "../../../assets/styles/style.scss";
 
 .banner{
   margin-top: -95px;
   .slick-slide{
-    min-height: 100vh;
+    min-height: 80vh;
     position: relative;
     .container{
-      min-height: 100vh;
+      min-height: 80vh;
       display: flex;
       align-items: center;
     }
@@ -20,7 +20,7 @@
     }
     .slider-inner{
       padding: $spacing-20 0;
-      height: 100%;
+      height: 80%;
       text-align: left;
     }
     .banner-heading{

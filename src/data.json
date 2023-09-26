@@ -29,7 +29,7 @@
           { "text": "Separated link", "href": "#action/3.4" }
         ]
       },
-      { "text": "Featured", "href": "/featured" },
+      { "text": "Cart", "href": "/cart" },
       { "text": "Blog", "href": "/blog" }
     ],
     "logoText": "Site Logo"
@@ -57,23 +57,24 @@
   "products": [
     {
       "id": 1,
-      "name": "Cool Blender",
-      "category": "Home Appliance",
+      "name": "Razer Blade 15 ",
+      "category": "Electronics",
       "type": "Laptop",
       "rating": 4,
-      "oldPrice": 29.99,
-      "price": 19.99,
-      "image": "https://images.unsplash.com/photo-1577495917765-9497a0de7caa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3774&q=80"
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://www.dpreview.com/files/p/articles/6096287211/DLCS1672-Edit.jpeg",
+      "featured": true
     },
     {
       "id": 2,
-      "name": "Product 2",
-      "category": "Electronics",
-      "type": "Smartphone",
+      "name": "Nike Sports Shoes",
+      "category": "Shoes",
+      "type": "Sports",
       "rating": 5,
-      "oldPrice": 399.99,
-      "price": 349.99,
-      "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80"
+      "oldPrice": 399,
+      "price": 349,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80"
     },
     {
       "id": 3,
@@ -81,24 +82,25 @@
       "category": "Clothing",
       "type": "T-Shirt",
       "rating": 3,
-      "price": 14.99,
+      "price": 14,
       "image": "https://images.unsplash.com/photo-1551799517-eb8f03cb5e6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3456&q=80"
     },
     {
       "id": 4,
       "name": "Product 4",
-      "category": "Electronics",
-      "type": "Headphones",
+      "category": "Clothing",
+      "type": "T-Shirt",
       "rating": 4,
       "oldPrice": 99.99,
       "price": 79.99,
-      "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80"
+      "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80",
+      "featured": true
     },
     {
       "id": 5,
       "name": "Product 5",
-      "category": "Books",
-      "type": "Novel",
+      "category": "Clothing",
+      "type": "T-Shirt",
       "rating": 4.8,
       "price": 12.99,
       "image": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3561&q=80"
@@ -106,8 +108,8 @@
     {
       "id": 6,
       "name": "Product 6",
-      "category": "Books",
-      "type": "Novel",
+      "category": "Clothing",
+      "type": "T-Shirt",
       "rating": 4.8,
       "oldPrice": 99.99,
       "price": 12.99,
@@ -117,7 +119,7 @@
     {
       "id": 7,
       "name": "Product 7",
-      "category": "Electronics",
+      "category": "Clothing",
       "type": "T-Shirt",
       "rating": 3,
       "price": 14.99,
@@ -126,11 +128,122 @@
     {
       "id": 8,
       "name": "Product 8",
-      "category": "Electronics",
-      "type": "Smartphone",
+      "category": "Clothing",
+      "type": "T-Shirt",
       "rating": 5,
       "price": 349.99,
       "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80"
+    },
+    {
+      "id": 9,
+      "name": "Razer Blade 15 ",
+      "category": "Electronics",
+      "type": "Laptop",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://www.dpreview.com/files/p/articles/6096287211/DLCS1672-Edit.jpeg",
+      "featured": true
+    },
+    {
+      "id": 10,
+      "name": "Rolex Classic ",
+      "category": "Watch",
+      "type": "Formal",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1547996160-81dfa63595aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3648&q=80"
+    },
+    {
+      "id": 11,
+      "name": "Sweet Shoes",
+      "category": "Shoes",
+      "type": "Sneakers",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3774&q=80"
+    },
+    {
+      "id": 12,
+      "name": "Nike Sports Shoes",
+      "category": "Shoes",
+      "type": "Sports",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3850&q=80"
+    },
+    {
+      "id": 13,
+      "name": "Everyday Sneakers",
+      "category": "Shoes",
+      "type": "Casual",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80"
+    },
+    {
+      "id": 14,
+      "name": "Euroreo Shoes ",
+      "category": "Shoes",
+      "type": "Sports",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80"
+    },
+    {
+      "id": 15,
+      "name": " Casual Sneakers",
+      "category": "Shoes",
+      "type": "Sneakers",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3796&q=80"
+    },
+    {
+      "id": 16,
+      "name": "Nike Shoes",
+      "category": "Shoes",
+      "type": "Sports",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
+    },
+    {
+      "id": 17,
+      "name": "Casio 1992 See through",
+      "category": "Watch",
+      "type": "Casual",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1657235895095-e043ce2ebf41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3079&q=80"
+    },
+    {
+      "id": 18,
+      "name": "Baisheng 1302",
+      "category": "Watch",
+      "type": "Formal",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1694630097817-c3a8e1e4029f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2312&q=80"
+    },
+    {
+      "id": 19,
+      "name": "Heigh Heels ",
+      "category": "Shoes",
+      "type": "Heels",
+      "rating": 5,
+      "oldPrice": 2699,
+      "price": 2399,
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3880&q=80"
     }
   ]
 }

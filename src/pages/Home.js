@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Banner from '../components/Banner';
-import ProductsTabs from '../components/ProductsTabs';
+import Banner from '../components/sections/Banner';
+import ProductsTabs from '../components/sections/ProductsTabs';
 
 const Home = () => {
   return (

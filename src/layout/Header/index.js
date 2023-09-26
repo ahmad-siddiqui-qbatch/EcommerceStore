@@ -5,19 +5,22 @@
  * the entire website. It incorporates navigation, header, and other components
  * to create a complete web page.
  */
-import React from 'react';
-import { Button, Form, Row, Col } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Button, Form, Row, Col, Modal, Dropdown } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
+import { useCart } from '../../components/Cart/CartContext';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import data from '../../../data.json';
 
+import data from '../../data.json';
 
 import './style.scss';
+import ProductSearchBar from '../../components/ProductsSearch';
+import Cart from '../../components/Cart/Cart';
 
 
 
@@ -44,6 +47,13 @@ const NavBarDropdown = ({ text, dropdownItems }) => (
 );
 
 const App = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const { totalProducts, clearCart, cart } = useCart();
+  const badgeContent = totalProducts >= 9 ? '9+' : totalProducts;
   return (
     <div>
 
@@ -53,12 +63,12 @@ const App = () => {
 
             <div className="header-left">
               <a href={`tel: ${data.header.phoneNumber}`}>
-              <i className="fa-solid fa-phone-volume"></i>
+                <i className="fa-solid fa-phone-volume"></i>
                 {data.header.phoneNumber}
               </a>
               <div className="divider"></div>
               <a href={`mailto: ${data.header.email}`}>
-              <i className="fa-regular fa-envelope-open"></i>
+                <i className="fa-regular fa-envelope-open"></i>
                 {data.header.email}
               </a>
             </div>
@@ -80,6 +90,16 @@ const App = () => {
           </div>
         </Container>
       </header>
+
+      {/* Search Modal */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Search</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ProductSearchBar />
+        </Modal.Body>
+      </Modal>
 
       <Navbar sticky="top" expand="lg">
         <Container className="position-relative">
@@ -105,7 +125,7 @@ const App = () => {
           <Form className="form">
             <Row className="g-0">
               <Col xs="auto">
-                <Button type="submit" className="icon-button">
+                <Button className="icon-button" onClick={handleShow}>
                   <i className="fa-solid fa-magnifying-glass"></i>
                 </Button>
               </Col>
@@ -121,10 +141,23 @@ const App = () => {
                 </Button>
               </Col>
               <Col xs="auto">
-                <Button type="submit" className="icon-button">
-                  <i className="fa-solid fa-bag-shopping"></i>
-                  <div className='badge'>2</div>
-                </Button>
+                <Dropdown className='cart-dropdown-wrapper'>
+                  <Dropdown.Toggle className="icon-button" variant="success" id="dropdown-basic">
+                    <i className="fa-solid fa-bag-shopping"></i>
+                    <div className='badge'>{badgeContent}</div>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="dropdown-menu-end cart-dropdown">
+                    <Cart />
+                    {cart.length > 0 ? (
+                      <div>
+                        <button className='btn btn-secondary w-100' onClick={clearCart}>Clear Cart</button>
+                        <Link to="/" className='btn btn-primary w-100 mt-2'>View Cart</Link>
+                      </div>
+                    ) : null}
+                  </Dropdown.Menu>
+                </Dropdown>
+
               </Col>
             </Row>
           </Form>

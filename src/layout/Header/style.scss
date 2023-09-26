@@ -1,4 +1,4 @@
-@import "../../../assets/styles/style.scss";
+@import "../../assets/styles/style.scss";
 
 header {
   height: 40px;
@@ -126,11 +126,12 @@ header {
       border: none;
       fill: $black;
       position: relative;
+      padding: $spacing-2 $spacing-3;
       .badge {
         background-color: $secondary;
         border-radius: 50px;
-        width: 15px;
-        height: 15px;
+        width: 18px;
+        height: 18px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -144,5 +145,76 @@ header {
         font-size: 16px;
       }
     }
+  }
+  .cart-dropdown-wrapper{
+    button:after{
+      display: none;
+    }
+  }
+  .cart-dropdown{
+    padding: $spacing-2;
+    min-width: 320px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.724);
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+    &> div > p {
+      text-align: center;
+      padding: $spacing-20 0;
+      color: $gray-500;
+    }
+  }
+  .cart-list{
+    list-style-type: none;
+    padding: 0;
+    min-width: 320px;
+    li{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $secondary;
+      padding-bottom: $spacing-2;
+      margin-bottom: $spacing-2;
+      .cart-product-image{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-right: $spacing-2;
+      }
+      .cart-item{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .product-name{
+        width: 110px;
+        text-overflow: ellipsis;
+        font-size: $text-base;
+        line-height: 16px;
+        font-weight: $font-semibold;
+      }
+      .product-price{
+        width: 72px;
+        padding: 0;
+      }
+      .product-count{
+        width: 26px;
+        margin: auto;
+        text-align: center;
+      }
+      .trash-button{
+        background-color: transparent;
+        border: none;
+        color: $red;
+        width: 26px;
+      }
+    }
+  }
+  .total{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-1;
   }
 }

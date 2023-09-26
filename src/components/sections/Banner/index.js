@@ -12,18 +12,18 @@ const index = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    fade: true, // Enable fading animation
+    fade: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, // Adjust autoplay speed
+    autoplaySpeed: 3000, 
   };
   return (
     <div className='banner'>
       <div className="slider-container">
         <Slider {...settings}>
           <div className='slide'>
-            <img src='https://wpbingo-fashow.myshopify.com/cdn/shop/files/slider-1.jpg?v=1663991033' />
+            <img src='https://wpbingo-fashow.myshopify.com/cdn/shop/files/slider-1.jpg?v=1663991033' alt='banner-img'/>
             <Container>
               <div className='slider-inner'>
                 <span className='subtitle'>30% OFF EVERYTHING</span>
@@ -33,7 +33,7 @@ const index = () => {
             </Container>
           </div>
           <div className='slide'>
-          <img src='https://wpbingo-fashow.myshopify.com/cdn/shop/files/slider2_4a73c90b-c7b5-4f9d-813d-1085481e08ae.jpg?v=1665116844' />
+          <img src='https://wpbingo-fashow.myshopify.com/cdn/shop/files/slider2_4a73c90b-c7b5-4f9d-813d-1085481e08ae.jpg?v=1665116844'  alt='banner-img'/>
             <Container>
               <div className='slider-inner'>
                 <span className='subtitle'>30% OFF EVERYTHING</span>
@@ -43,7 +43,7 @@ const index = () => {
             </Container>
           </div>
           <div className='slide'>
-          <img src='https://wpbingo-fashow.myshopify.com/cdn/shop/files/slider-1.jpg?v=1663991033' />
+          <img src='https://wpbingo-fashow.myshopify.com/cdn/shop/files/slider-1.jpg?v=1663991033'  alt='banner-img'/>
             <Container>
               <div className='slider-inner'>
                 <span className='subtitle'>NEW COLLECTION</span>
