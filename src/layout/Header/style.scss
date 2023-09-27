@@ -1,10 +1,10 @@
 @import "../../assets/styles/style.scss";
 
 header {
+  background-color: $black;
   height: 40px;
   display: flex;
   align-items: center;
-  background-color: transparent;
   z-index: 2;
   position: relative;
   .divider {
@@ -53,17 +53,20 @@ header {
 }
 
 .navbar {
-  border: 1px solid $gray-100;
-  border-bottom: 0;
-  background-color: transparent;
+  border-top: 1px solid $gray-500;
+  background-color: #000000a8;
+  backdrop-filter: blur(8px);
   position: fixed;
+  z-index: 1;
   top: 0;
+  @include box-shadow;
   .navbar-brand {
     position: absolute;
     left: 0;
     right: 0;
     height: 100%;
     display: flex;
+    color: $secondary;
     justify-content: center;
     font-weight: bold;
   }
@@ -91,7 +94,7 @@ header {
     .nav-link {
       padding-right: $spacing-6;
       padding-left: 0;
-      color: $black;
+      color: $white;
       position: relative;
       z-index: 2;
       &:hover,
@@ -129,6 +132,7 @@ header {
       padding: $spacing-2 $spacing-3;
       .badge {
         background-color: $secondary;
+        color: $black;
         border-radius: 50px;
         width: 18px;
         height: 18px;
@@ -141,7 +145,7 @@ header {
         font-size: $text-xs;
       }
       i {
-        color: $black;
+        color: $white;
         font-size: 16px;
       }
     }
@@ -150,12 +154,12 @@ header {
     button:after{
       display: none;
     }
-  }
+
   .cart-dropdown{
     padding: $spacing-2;
     min-width: 320px;
     backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.724);
+    background-color: rgba(53, 53, 53, 0.724);
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
 -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
 -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
@@ -165,10 +169,12 @@ header {
       color: $gray-500;
     }
   }
+  }
   .cart-list{
     list-style-type: none;
     padding: 0;
     min-width: 320px;
+    color: $white;
     li{
       display: flex;
       align-items: center;
@@ -187,6 +193,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        color: $white;
       }
       .product-name{
         width: 110px;
@@ -194,10 +201,12 @@ header {
         font-size: $text-base;
         line-height: 16px;
         font-weight: $font-semibold;
+        color: $secondary;
       }
       .product-price{
         width: 72px;
         padding: 0;
+        color: $white;
       }
       .product-count{
         width: 26px;
@@ -216,5 +225,9 @@ header {
     display: flex;
     justify-content: space-between;
     margin-bottom: $spacing-1;
+    color: $white;
+    b{
+      color: $secondary;
+    }
   }
 }

@@ -1,0 +1,27 @@
+@import "../../../assets/styles/style.scss";
+
+.product{
+  position: relative;
+  text-decoration: none;
+  display: block;
+  margin-bottom: $spacing-10;
+  border: 1px solid $gray-500;
+  border-radius: 10px;
+  padding-bottom: $spacing-6;
+  overflow: hidden;
+  background-color: #252525b8;
+  .product-info{
+    text-align: center;
+    padding: 0 $spacing-4;
+  }
+  .product-heading{
+    color: $gray-100;
+    font-weight: 200;
+  }
+  .product-img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

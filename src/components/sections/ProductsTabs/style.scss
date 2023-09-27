@@ -2,6 +2,9 @@
 
 .tabs-wrapper{
   padding: $spacing-20 0;
+  .subtitle{
+    color: $secondary;
+  }
   .nav-tabs{
     justify-content: center;
     border-bottom: 0;
@@ -11,27 +14,10 @@
       color: $gray-500;
       font-size: $text-md;
       &.active{
-        border-bottom: 2px solid $black;
-        color: $black;
+        border-bottom: 2px solid $gray-100;
+        color: $gray-100;
+        background-color: $black;
       }
     }
-  }
-}
-
-.product{
-  position: relative;
-  text-decoration: none;
-  display: block;
-  margin-bottom: $spacing-10;
-  border: 1px solid $gray-100;
-  padding-bottom: $spacing-6;
-  .product-heading{
-    color: $black;
-  }
-  .product-img{
-    height: 300px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 }

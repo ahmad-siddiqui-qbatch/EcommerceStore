@@ -1,23 +1,27 @@
 @import "../../../assets/styles/style.scss";
 
-.product-price{
+.product-price {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: $spacing-2;
-  padding-bottom: $spacing-4;
-  .old-price{
+  padding: $spacing-2;
+  .old-price {
     color: $gray-200;
     text-decoration: line-through;
+    font-size: $text-sm;
+    font-weight: 200;
   }
-  .price{
+  .price {
     color: $secondary;
-    font-weight: $font-semibold;
+    font-size: $text-md;
+    font-weight: 200;
   }
-  .badge{
+  .badge {
     position: absolute;
     top: 10px;
     left: 10px;
     background-color: $secondary;
+    color: $black;
   }
 }

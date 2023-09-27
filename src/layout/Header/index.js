@@ -55,7 +55,7 @@ const App = () => {
   const { totalProducts, clearCart, cart } = useCart();
   const badgeContent = totalProducts >= 9 ? '9+' : totalProducts;
   return (
-    <div>
+    <>
 
       <header>
         <Container>
@@ -166,7 +166,7 @@ const App = () => {
         </Container>
       </Navbar>
 
-    </div >
+    </ >
   );
 };
 

@@ -6,7 +6,8 @@ import data from '../../../data.json';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useCart } from '../../Cart/CartContext';
-import Cart from '../../Cart/Cart';
+
+import './style.scss';
 
 function Products(props) {
   const [products, setProducts] = useState([]);
@@ -80,13 +81,13 @@ function Products(props) {
                         />
 
                     </Link>
-                        <div>
-                          <Rating rating={product.rating} />
-                          <h4 className='product-heading'>{product.name}</h4>
+                        <div className='product-info'>
                           <ProductPrice
                             oldPrice={product.oldPrice}
                             price={product.price}
                           />
+                          <h4 className='product-heading'>{product.name}</h4>
+                          <Rating rating={product.rating} />
                           <button className='btn btn-secondary' onClick={() => addToCart(product)}>Add to cart</button>
                         </div>
                       </div>
@@ -111,13 +112,13 @@ function Products(props) {
                   />
 
               </Link>
-                  <div>
-                    <Rating rating={product.rating} />
-                    <h4 className='product-heading'>{product.name}</h4>
+                  <div className='product-info'>
                     <ProductPrice
                       oldPrice={product.oldPrice}
                       price={product.price}
                     />
+                    <h4 className='product-heading'>{product.name}</h4>
+                    <Rating rating={product.rating} />
                     <button className='btn btn-secondary' onClick={() => addToCart(product)}>Add to cart</button>
                   </div>
                 </div>
@@ -125,7 +126,6 @@ function Products(props) {
           ))}
         </Row>
       )}
-      <Cart />
     </div>
   );
 }

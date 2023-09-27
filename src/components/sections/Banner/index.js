@@ -1,29 +1,29 @@
 import React from 'react';
 
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 import './style.scss';
-import { Container } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const index = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000, 
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   fade: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000, 
+  // };
   return (
     <div className='banner'>
-      <div className="slider-container">
+      {/* <div className="slider-container">
         <Slider {...settings}>
           <div className='slide'>
-            <img src='https://wpbingo-fashow.myshopify.com/cdn/shop/files/slider-1.jpg?v=1663991033' alt='banner-img'/>
+            <img src='https://images.unsplash.com/photo-1502921935-be74c0dc50fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80' alt='banner-img'/>
             <Container>
               <div className='slider-inner'>
                 <span className='subtitle'>30% OFF EVERYTHING</span>
@@ -53,7 +53,18 @@ const index = () => {
             </Container>
           </div>
         </Slider>
-      </div>
+      </div> */}
+      <Row>
+        <Col lg={6}>
+        <img src='https://images.unsplash.com/photo-1517241034903-9a4c3ab12f00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80' className='banner-img' />
+        </Col>
+        <Col lg={6}>
+        <span className='banner-heading'>
+        Luxury Redefined <span className='golden-heading'>Your Gateway to Prestige.</span>
+        </span>
+        </Col>
+      </Row>
+     
     </div>
   );
 };

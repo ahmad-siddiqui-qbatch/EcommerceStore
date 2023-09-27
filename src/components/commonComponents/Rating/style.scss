@@ -3,9 +3,9 @@
 .rating{
   display: flex;
   justify-content: center;
-  color: $gray-200;
-  padding: $spacing-4 0;
+  color: $gray-500;
+  padding: $spacing-2 0;
   .filled{
-    color: $yellow;
+    color: $secondary;
   }
 }

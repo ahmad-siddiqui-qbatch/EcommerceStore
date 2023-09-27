@@ -28,7 +28,7 @@ const ProductsDetail = () => {
         </div>
         <ProductDetail />
         <h2 className='pb-4'>Related Products</h2>
-        <Products sectionProductCount={5} section related category={selectedProduct.category} type={selectedProduct.type}/>
+        <Products sectionProductCount={4} section related category={selectedProduct.category} type={selectedProduct.type}/>
       </Container>
     </div>
   );

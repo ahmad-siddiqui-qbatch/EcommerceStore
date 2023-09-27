@@ -3,6 +3,8 @@ body{
   padding: 0;
   box-sizing: border-box;
   font-size: $text-base;
+  background: $black;
+  color: $white;
 }
 
 .form-select{
@@ -30,20 +32,40 @@ h5{
   border-radius: 0;
 }
 .btn-secondary{
-  color: $white;
-  padding: $spacing-4 $spacing-10;
+  color: $gray-100;
+  padding: $spacing-2 0;
+  border: none;
+  border-bottom: 1px solid $secondary;
+  background-color: transparent;
+  &:hover{
+    background-color: transparent;
+    color: $white;
+  }
 }
 .btn-primary{
-  color: $secondary;
-  padding: $spacing-4 $spacing-10;
-  background-color: $white;
-  border: 1px solid $gray-500;
+  color: $gray-100;
+  padding: $spacing-2 0;
+  border: none;
+  border-bottom: 1px solid $secondary;
+  background-color: transparent;
+  &:hover{
+    background-color: transparent;
+    color: $white;
+  }
 }
 .form-control{
   border-radius: 0;
 }
 a{
   text-decoration: none;
+}
+
+.golden-heading{
+  display: block;
+  background: url('https://promo-theme.com/luxa/wp-content/plugins/pt-luxa-addons/assets/imgs/bg-sticker.jpg');
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
 }
 
 
@@ -54,20 +76,6 @@ a{
   .cart-dropdown-wrapper{
     button:after{
       display: none;
-    }
-  }
-  .cart-dropdown{
-    padding: $spacing-2;
-    min-width: 320px;
-    backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.724);
-    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
-    &> div > p {
-      text-align: center;
-      padding: $spacing-20 0;
-      color: $gray-500;
     }
   }
   .cart-list{
@@ -100,16 +108,19 @@ a{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        color: $white;
       }
       .product-name{
         text-overflow: ellipsis;
         font-size: $text-base;
         line-height: 16px;
         font-weight: $font-semibold;
+        color: $secondary;
       }
       .product-price{
         padding: 0;
         text-align: center;
+        color: $white;
       }
       .trash-button{
         background-color: transparent;
