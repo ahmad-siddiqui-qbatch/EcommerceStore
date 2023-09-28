@@ -9,7 +9,7 @@ const index = () => {
     <div className='product-type-cards'>
       <Row className='g-0'>
         <Col lg={3} className='card'>
-          <Link>
+          <Link to='/shop/Clothing'>
             <img className='background-image' src='https://images.unsplash.com/photo-1546572797-e8c933a75a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3648&q=80' />
             <div className='card-inner'>
               <div>
@@ -20,7 +20,7 @@ const index = () => {
           </Link>
         </Col>
         <Col lg={3} className='card'>
-          <Link>
+          <Link to='/shop/Watch'>
             <img className='background-image' src='https://images.unsplash.com/photo-1547996160-81dfa63595aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3648&q=80' />
             <div className='card-inner'>
               <div>
@@ -31,7 +31,7 @@ const index = () => {
           </Link>
         </Col>
         <Col lg={3} className='card'>
-          <Link>
+          <Link to='/shop/Shoes'>
             <img className='background-image' src='https://images.unsplash.com/photo-1563434649554-58f91d22ec2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3879&q=80' />
             <div className='card-inner'>
               <div>
@@ -42,7 +42,7 @@ const index = () => {
           </Link>
         </Col>
         <Col lg={3} className='card'>
-          <Link>
+          <Link to='/shop/all'>
             <img className='background-image' src='https://images.unsplash.com/photo-1530432999454-016a47c78af3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2998&q=80' />
             <div className='card-inner'>
               <div>
