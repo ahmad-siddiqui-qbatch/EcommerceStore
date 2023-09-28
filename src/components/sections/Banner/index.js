@@ -5,7 +5,7 @@ import React from 'react';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 import './style.scss';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const index = () => {
   // const settings = {
@@ -54,16 +54,15 @@ const index = () => {
           </div>
         </Slider>
       </div> */}
+      <Container>
       <Row>
-        <Col lg={6}>
-        <img src='https://images.unsplash.com/photo-1517241034903-9a4c3ab12f00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80' className='banner-img' />
-        </Col>
-        <Col lg={6}>
+        <Col lg={12}>
         <span className='banner-heading'>
         Luxury Redefined <span className='golden-heading'>Your Gateway to Prestige.</span>
         </span>
         </Col>
       </Row>
+      </Container>
      
     </div>
   );

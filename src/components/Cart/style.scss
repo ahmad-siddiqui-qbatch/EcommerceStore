@@ -1,31 +1,80 @@
 @import '../../assets/styles/style.scss';
 
-.cart-list{
-  list-style-type: none;
-  padding: 0;
-  min-width: 320px;
-  li{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .cart-item{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .product-name{
-      width: 120px;
-      text-overflow: ellipsis;
-    }
-    .product-count{
-      width: 26px;
-      margin-left: auto;
-    }
     .trash-button{
-      background-color: $white;
+      background-color: transparent;
       border: none;
       color: $red;
       width: 26px;
     }
-  }
-}
+    .product-total{
+      color: $secondary;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      /* Style for table headers */
+      th {
+        text-align: left;
+        padding: $spacing-4;
+        border-bottom: 1px solid $gray-500;
+        font-weight: 500;
+        color: $gray-200;
+      }
+      /* Style for table rows */
+      tr {
+        border-bottom: 1px solid $gray-500;
+        text-align: left;
+        img{
+          width: 100px;
+          height: 100px;
+          display: block;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+    
+    /* Style for table data cells */
+    td {
+      padding: $spacing-4;
+      border: 1px solid #ddd;
+    }
+    
+    /* Style for the "Total Price" row */
+    tr.total-row {
+      font-weight: bold;
+      background-color: #dcdcdc;
+    }
+
+   .total-card{
+    border: 1px solid $gray-500;
+    background-color: $black;
+    padding: $spacing-6;
+    h5{
+      color: $gray-500;
+      border-bottom: 1px solid $gray-500;
+      padding: $spacing-3 $spacing-2 $spacing-4;
+      margin-bottom: $spacing-4;
+      text-align: left;
+    }
+    .total{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 $spacing-2;
+      span{
+        color: $secondary;
+        font-size: $text-sm;
+      }
+      b{
+        color: $gray-200;
+      }
+    }
+
+    .btn{
+      margin-bottom: $spacing-4;
+    }
+   }
+    

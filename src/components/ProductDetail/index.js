@@ -2,13 +2,13 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import data from '../../data.json';
 import './style.scss';
-import { useCart } from '../Cart/CartContext'; // Import the useCart hook
+import { useGlobalContext } from '../GlobalContext'; // Import the useGlobalContext hook
 
 import { Col, Row } from 'react-bootstrap';
 
 function ProductDetails() {
   const { productId } = useParams();
-  const { addToCart } = useCart(); // Access the addToCart function from the Cart context
+  const { addToCart } = useGlobalContext(); 
   const selectedProduct = data.products.find(
     (product) => product.id.toString() === productId
   );
@@ -25,10 +25,12 @@ function ProductDetails() {
         </Col>
         <Col lg='6'>
           <div className='product-details'>
-            <h2>{selectedProduct.name}</h2>
-            <p><b>Category: </b><Link to={`/shop/${selectedProduct.category}`}>{selectedProduct.category}</Link></p>
+            <h2 className='golden-heading'>{selectedProduct.name}</h2>
+           <div className='product-inner-wrapper'>
+           <p><b>Category: </b><Link to={`/shop/${selectedProduct.category}`}>{selectedProduct.category}</Link></p>
             <p><b>Type: </b><Link to={`/shop/${selectedProduct.category}/${selectedProduct.type}`}>{selectedProduct.type}</Link> </p>
             <p><b>Rating: </b> {selectedProduct.rating}</p>
+           </div>
             <p className='product-price'>
               <b>Price: </b>
               <span className='old-price'>{selectedProduct.oldPrice && selectedProduct.oldPrice}</span>
@@ -36,7 +38,7 @@ function ProductDetails() {
             </p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
             {/* Add the "Add to Cart" button here */}
-            <button className='btn btn-secondary' onClick={() => addToCart(selectedProduct)}>Add to cart</button>
+            <button className='btn btn-primary' onClick={() => addToCart(selectedProduct)}>Add to cart <i class="fa-solid fa-cart-arrow-down"></i></button>
           </div>
         </Col>
       </Row>

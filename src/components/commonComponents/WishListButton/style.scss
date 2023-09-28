@@ -1,0 +1,27 @@
+@import '../../../assets/styles/style.scss';
+
+.like-button{
+  background-color: $white;
+  border: 1px solid $white;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: $spacing-1;
+  right: $spacing-1;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.24);
+  i{
+    font-size: $text-sm;
+  }
+  .fa-solid{
+    color: rgb(242, 52, 52);
+  }
+  .fa-regular{
+    color: $gray-500;
+  }
+}

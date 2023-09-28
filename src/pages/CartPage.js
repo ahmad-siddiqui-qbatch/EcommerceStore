@@ -6,7 +6,7 @@ const CartPage = () => {
   return (
     <div className='cart-page'>
       <Container>
-        <h1 className='pb-5'>Cart</h1>
+        <h1 className='pb-5 golden-heading'>Cart</h1>
       <Cart/>
       </Container>
     </div>

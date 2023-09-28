@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Rating from '../Rating';
 import ProductPrice from '../Price';
+import WishListButton from '../WishListButton'
 import data from '../../../data.json';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useCart } from '../../Cart/CartContext';
+import { useGlobalContext } from '../../GlobalContext';
 
 import './style.scss';
 
@@ -13,7 +14,7 @@ function Products(props) {
   const [products, setProducts] = useState([]);
   const { productId } = useParams();
   const { category, type, related, sectionProductCount } = props;
-  const { addToCart } = useCart(); 
+  const { addToCart } = useGlobalContext(); 
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -88,6 +89,7 @@ function Products(props) {
                           />
                           <h4 className='product-heading'>{product.name}</h4>
                           <Rating rating={product.rating} />
+                          <WishListButton productId={product.id} />
                           <button className='btn btn-secondary' onClick={() => addToCart(product)}>Add to cart</button>
                         </div>
                       </div>
@@ -119,6 +121,7 @@ function Products(props) {
                     />
                     <h4 className='product-heading'>{product.name}</h4>
                     <Rating rating={product.rating} />
+                    <WishListButton productId={product.id} />
                     <button className='btn btn-secondary' onClick={() => addToCart(product)}>Add to cart</button>
                   </div>
                 </div>

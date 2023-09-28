@@ -9,14 +9,15 @@ import Shop from './pages/ShopPage';
 import Sale from './pages/SalePage';
 import ProductDetails from './pages/ProductsDetail'; 
 import data from './data.json';
-import { CartProvider } from './components/Cart/CartContext';
+import { GlobalProvider } from './components/GlobalContext';
 import Cart from './pages/CartPage';
+import WishList from './pages/WishList';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <CartProvider>
+        <GlobalProvider>
         <Header />
         <div className='content'>
           <Routes>
@@ -50,11 +51,12 @@ function App() {
                 />
               }
             />
+            <Route path='/wishlist' element={<WishList/>} />
             <Route path='/cart' element={<Cart/>} />
           </Routes>
         </div>
         <Footer />
-        </CartProvider>
+        </GlobalProvider>
       </Router>
     </div>
   );

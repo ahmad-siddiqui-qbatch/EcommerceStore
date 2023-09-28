@@ -12,14 +12,18 @@ body{
     box-shadow: none;
   }
 }
-h1{
+h1, .text-h1{
   font-size: $text-xl;
-  line-height: 72px;
+  line-height: 80px;
   font-weight: $font-bold;
 }
+
 h2{
   font-size: $text-lg;
   font-weight: $font-semibold;
+}
+h3{
+  font-size: $text-md;
 }
 h4{
   font-size: $text-sm;
@@ -43,14 +47,14 @@ h5{
   }
 }
 .btn-primary{
-  color: $gray-100;
-  padding: $spacing-2 0;
-  border: none;
-  border-bottom: 1px solid $secondary;
+  color: $white;
+  padding: $spacing-4 $spacing-10;
+  border: 1px solid $secondary;
   background-color: transparent;
   &:hover{
     background-color: transparent;
     color: $white;
+    border-color: $gray-200 !important;
   }
 }
 .form-control{
@@ -129,13 +133,5 @@ a{
         width: 26px;
       }
     }
-  }
-  .total{
-    padding-top: $spacing-5;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: $spacing-1;
-    max-width: 320px;
-    margin-left: auto;
   }
 }

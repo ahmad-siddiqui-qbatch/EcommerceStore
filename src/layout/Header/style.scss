@@ -159,7 +159,7 @@ header {
     padding: $spacing-2;
     min-width: 320px;
     backdrop-filter: blur(8px);
-    background-color: rgba(53, 53, 53, 0.724);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
 -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
 -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
@@ -170,64 +170,5 @@ header {
     }
   }
   }
-  .cart-list{
-    list-style-type: none;
-    padding: 0;
-    min-width: 320px;
-    color: $white;
-    li{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid $secondary;
-      padding-bottom: $spacing-2;
-      margin-bottom: $spacing-2;
-      .cart-product-image{
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        margin-right: $spacing-2;
-      }
-      .cart-item{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: $white;
-      }
-      .product-name{
-        width: 110px;
-        text-overflow: ellipsis;
-        font-size: $text-base;
-        line-height: 16px;
-        font-weight: $font-semibold;
-        color: $secondary;
-      }
-      .product-price{
-        width: 72px;
-        padding: 0;
-        color: $white;
-      }
-      .product-count{
-        width: 26px;
-        margin: auto;
-        text-align: center;
-      }
-      .trash-button{
-        background-color: transparent;
-        border: none;
-        color: $red;
-        width: 26px;
-      }
-    }
-  }
-  .total{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: $spacing-1;
-    color: $white;
-    b{
-      color: $secondary;
-    }
-  }
+  
 }

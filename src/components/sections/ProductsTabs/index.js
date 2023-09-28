@@ -15,18 +15,19 @@ const index = () => {
     <div>
       <Container>
         <div className='tabs-wrapper'>
-          <span className='subtitle'>Weekly Selection</span>
+          <h2 className='golden-heading text-h1 pb-3'>Spotlight</h2>
           <Tabs
             defaultActiveKey="home"
             id="uncontrolled-tab-example"
-            className="mb-3"
+            className="my-3"
           >
             <Tab eventKey="home" title="Best Deal">
             <Products sectionProductCount={4} sale section pageLink="/"/>
-              <Link to='/'>View</Link>
+              <Link className='btn btn-primary' to='/'>View More</Link>
             </Tab>
             <Tab eventKey="profile" title="Best Sellers">
             <Products sectionProductCount={4} section pageLink="/" rating/>
+              <Link className='btn btn-primary' to='/'>View More</Link>
             </Tab>
           </Tabs>
         </div>

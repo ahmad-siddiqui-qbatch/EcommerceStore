@@ -1,16 +1,16 @@
 import React from 'react';
-import { useCart } from './CartContext';
+import { useGlobalContext } from '../GlobalContext';
 
 import './style.scss';
+import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Cart() {
-  const { cart, removeFromCart, totalProducts, totalPrice  } = useCart();
+  const { cart, removeFromCart, totalProducts, totalPrice } = useGlobalContext();
 
   const productQuantity = (productId) => {
     return cart.filter((item) => item.id === productId).length;
   };
-
-
 
   return (
     <div>
@@ -18,37 +18,72 @@ function Cart() {
         <p className='mb-0'>Your cart is empty.</p>
       ) : (
         <div>
-          <ul className='cart-list'>
-            {Array.from(new Set(cart.map((item) => item.id))).map(
-              (productId) => (
-                <li key={productId}>
-                  <div className='cart-item'>
-                   <div className='cart-image-wrapper'>
-                   <img
-                      className='cart-product-image'
-                      src={cart.find((item) => item.id === productId).image}
-                      alt={cart.find((item) => item.id === productId).name}
-                    />
-                   </div>
-                    <span className='product-name pe-2'>
-                      {cart.find((item) => item.id === productId).name}
-                    </span> 
-                    <span className='product-count'>{productQuantity(productId)}{' '}</span>
-                    <span className='product-price'>
-                      ${cart.find((item) => item.id === productId).price.toFixed(2)}
-                    </span>
-                   
-                  </div>
-                  <button className='trash-button' onClick={() => removeFromCart(productId)}>
-                    <i className="fa-regular fa-trash-can"></i>
-                  </button>
-                </li>
-              )
-            )}
-          </ul>
-          <p className='total mb-3'><b>Total Products:</b> {totalProducts}</p>
+          <Row>
+            <Col lg={8}>
+              <table>
+                <thead>
+                  <th>Product</th>
+                  <th></th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  {Array.from(new Set(cart.map((item) => item.id))).map(
+                    (productId) => (
+                      <tr key={productId}>
+                        <td>
+                          <img
+                            className='cart-product-image'
+                            src={cart.find((item) => item.id === productId).image}
+                            alt={cart.find((item) => item.id === productId).name}
+                          />
+                        </td>
+                        <td>{cart.find((item) => item.id === productId).name}</td>
+                        <td>
+                          ${cart.find((item) => item.id === productId).price.toFixed(2)}
+                        </td>
+                        <td>
+                          <span className='product-count'>
+                            {productQuantity(productId)}{' '}
+                          </span>
+                        </td>
+                        <td className='product-total'>
+                          ${(
+                            cart.find((item) => item.id === productId).price *
+                            productQuantity(productId)
+                          ).toFixed(2)}
+                        </td>
+                        <td>
+                          <button
+                            className='trash-button'
+                            onClick={() => removeFromCart(productId)}
+                          >
+                            <i className='fa-regular fa-trash-can'></i>
+                          </button>
+                        </td>
+                      </tr>
+                    )
+                  )}
+                </tbody>
+              </table>
+            </Col>
+            <Col>
+              
+              <div className='total-card'>
+                <h5>Cart Totals</h5>
+              <p className='total'>
+                <b>Total Products:</b> {totalProducts}
+              </p>
+              <p className='total'>
+                <b>Total Price:</b><span> ${totalPrice}</span>
+              </p>
+              <Link className='btn btn-primary w-100'>Proceed to Payment</Link>
+              </div>
+            </Col>
+          </Row>
 
-          <p className='total'><b>Total Price:</b> ${totalPrice}</p>
         </div>
       )}
     </div>

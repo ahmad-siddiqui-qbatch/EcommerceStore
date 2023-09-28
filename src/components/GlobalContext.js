@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const CartContext = createContext();
+const GlobalContext = createContext();
 
-export function CartProvider({ children }) {
+export function GlobalProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0); // New state for total price
-
+  const [wishlist, setWishlist] = useState([]);
   const updateTotalProducts = (updatedCart) => {
     setTotalProducts(updatedCart.length);
   };
@@ -34,6 +34,19 @@ export function CartProvider({ children }) {
     setCart([]);
   };
 
+  const addToWishlist = (productId) => {
+    if (!wishlist.includes(productId)) {
+      setWishlist([...wishlist, productId]);
+    }
+  };
+
+  const removeFromWishlist = (productId) => {
+    setWishlist(wishlist.filter((id) => id !== productId));
+  };
+
+  const isProductInWishlist = (productId) => wishlist.includes(productId);
+
+
   const contextValue = {
     cart,
     addToCart,
@@ -41,13 +54,18 @@ export function CartProvider({ children }) {
     clearCart,
     totalProducts,
     totalPrice, // Include totalPrice in the context
+
+    wishlist, // Include wishlist in the context
+    addToWishlist,
+    removeFromWishlist,
+    isProductInWishlist,
   };
 
   return (
-    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
+    <GlobalContext.Provider value={contextValue}>{children}</GlobalContext.Provider>
   );
 }
 
-export function useCart() {
-  return useContext(CartContext);
+export function useGlobalContext() {
+  return useContext(GlobalContext);
 }

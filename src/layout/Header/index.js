@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Row, Col, Modal, Dropdown } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import { useCart } from '../../components/Cart/CartContext';
+import { useGlobalContext } from '../../components/GlobalContext';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -46,14 +46,21 @@ const NavBarDropdown = ({ text, dropdownItems }) => (
   </NavDropdown>
 );
 
+
 const App = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const { totalProducts, clearCart, cart } = useCart();
+  const { totalProducts, clearCart, cart } = useGlobalContext();
   const badgeContent = totalProducts >= 9 ? '9+' : totalProducts;
+
+
+// --------------------
+// WishList
+// --------------------
+const { wishlist } = useGlobalContext();
   return (
     <>
 
@@ -135,10 +142,10 @@ const App = () => {
                 </Button>
               </Col>
               <Col xs="auto">
-                <Button type="submit" className="icon-button">
+                <Link to="/wishlist" className="icon-button d-block">
                   <i className="fa-regular fa-heart"></i>
-                  <div className='badge'>3</div>
-                </Button>
+                  <div className='badge'>{wishlist.length}</div>
+                </Link>
               </Col>
               <Col xs="auto">
                 <Dropdown className='cart-dropdown-wrapper'>
