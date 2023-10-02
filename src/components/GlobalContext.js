@@ -5,7 +5,7 @@ const GlobalContext = createContext();
 export function GlobalProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [totalProducts, setTotalProducts] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0); // New state for total price
+  const [totalPrice, setTotalPrice] = useState(0); 
   const [wishlist, setWishlist] = useState([]);
   const updateTotalProducts = (updatedCart) => {
     setTotalProducts(updatedCart.length);

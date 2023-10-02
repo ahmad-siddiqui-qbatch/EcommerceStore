@@ -60,6 +60,15 @@ h5{
 .form-control{
   border-radius: 0;
 }
+.golden-input{
+  border: 1px solid $secondary;
+  background-color: transparent;
+  color: $white;
+  padding: $spacing-4;
+  &:focus{
+    outline: none;
+  }
+}
 a{
   text-decoration: none;
 }
@@ -132,6 +141,23 @@ a{
         color: $red;
         width: 26px;
       }
+    }
+  }
+}
+
+// Login
+.login-wrapper{
+  min-height: 100vh;
+  form{
+    max-width: 500px;
+    margin: auto;
+  }
+  .login-image{
+    img{
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
