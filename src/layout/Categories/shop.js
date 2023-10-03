@@ -1,6 +1,5 @@
 import React from 'react';
 import data from '../../data.json';
-import './style.scss';
 import { NavLink, useParams } from 'react-router-dom';
 
 const CategoryShopSidebar = () => {

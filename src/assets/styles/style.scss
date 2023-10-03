@@ -1,3 +1,18 @@
 @import './variables';
 @import './mixins';
 @import './global';
+@import './modules/productSearch';
+@import './modules/productDetail';
+@import './modules/price';
+@import './modules/products';
+@import './modules/rating';
+@import './modules/wishListButton';
+@import './modules/cart';
+@import './modules/categories';
+
+
+@import './sections/header';
+@import './sections/banner';
+@import './sections/productTabs';
+@import './sections/productTypeCards';
+@import './sections/footer';

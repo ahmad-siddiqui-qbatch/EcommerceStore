@@ -1,5 +1,3 @@
-@import "../../assets/styles/style.scss";
-
 header {
   background-color: $black;
   height: 40px;
@@ -50,6 +48,9 @@ header {
       cursor: pointer;
     }
   }
+  @include media-max-width(sm) {
+    display: none;
+  }
 }
 
 .modal {
@@ -58,12 +59,12 @@ header {
     backdrop-filter: blur(8px);
   }
 }
-
 .navbar {
   border-top: 1px solid $gray-500;
+  width: 100%;
   background-color: #000000a8;
   backdrop-filter: blur(8px);
-  position: fixed;
+  position: sticky;
   z-index: 1;
   top: 0;
   @include box-shadow;
@@ -76,6 +77,11 @@ header {
     color: $secondary;
     justify-content: center;
     font-weight: bold;
+  }
+  .navbar-collapse{
+    &.show{
+      background-color: $black;
+    }
   }
   @include media-max-width(md) {
     .navbar-collapse {
@@ -166,14 +172,19 @@ header {
       padding: $spacing-2;
       min-width: 320px;
       backdrop-filter: blur(8px);
-      background-color: rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, 0.9);
       box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3);
       -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3);
       & > div > p {
         text-align: center;
         padding: $spacing-20 0;
-        color: $gray-500;
+        color: $gray-200;
+      }
+      .cart{
+        td{
+          color: $white;
+        }
       }
     }
   }

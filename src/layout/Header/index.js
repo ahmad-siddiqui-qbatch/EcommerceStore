@@ -14,11 +14,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Logout from '../../components/Logout';
 
 
 import data from '../../data.json';
 
-import './style.scss';
 import ProductSearchBar from '../../components/ProductsSearch';
 import Cart from '../../components/Cart/Cart';
 
@@ -49,6 +49,7 @@ const NavBarDropdown = ({ text, dropdownItems }) => (
 
 const App = () => {
   const [show, setShow] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true'); 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -56,14 +57,19 @@ const App = () => {
   const { totalProducts, clearCart, cart } = useGlobalContext();
   const badgeContent = totalProducts >= 9 ? '9+' : totalProducts;
 
+  const handleDeleteButtonClick = (e) => {
+    if (e.target.classList.contains('delete-button')) {
+      e.stopPropagation();
+    }
+  };
 
-// --------------------
-// WishList
-// --------------------
-const { wishlist } = useGlobalContext();
+
+  // --------------------
+  // WishList
+  // --------------------
+  const { wishlist } = useGlobalContext();
   return (
-    <>
-
+    <div>
       <header>
         <Container>
           <div className="header-inner">
@@ -108,7 +114,7 @@ const { wishlist } = useGlobalContext();
         </Modal.Body>
       </Modal>
 
-      <Navbar sticky="top" expand="lg">
+      <Navbar expand="lg">
         <Container className="position-relative">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -137,11 +143,6 @@ const { wishlist } = useGlobalContext();
                 </Button>
               </Col>
               <Col xs="auto">
-                <Button type="submit" className="icon-button">
-                  <i className="fa-solid fa-user"></i>
-                </Button>
-              </Col>
-              <Col xs="auto">
                 <Link to="/wishlist" className="icon-button d-block">
                   <i className="fa-regular fa-heart"></i>
                   <div className='badge'>{wishlist.length}</div>
@@ -159,12 +160,18 @@ const { wishlist } = useGlobalContext();
                     {cart.length > 0 ? (
                       <div>
                         <button className='btn btn-secondary w-100' onClick={clearCart}>Clear Cart</button>
-                        <Link to="/" className='btn btn-primary w-100 mt-2'>View Cart</Link>
+                        <Link to="/cart" className='btn btn-primary w-100 mt-2'>View Cart</Link>
                       </div>
                     ) : null}
                   </Dropdown.Menu>
                 </Dropdown>
 
+              </Col>
+
+              <Col xs="auto">
+                {isLoggedIn && (
+                  <Logout onLogout={() => setIsLoggedIn(false)} />
+                )}
               </Col>
             </Row>
           </Form>
@@ -173,7 +180,7 @@ const { wishlist } = useGlobalContext();
         </Container>
       </Navbar>
 
-    </ >
+    </div >
   );
 };
 

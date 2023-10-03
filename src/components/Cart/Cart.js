@@ -1,7 +1,6 @@
 import React from 'react';
 import { useGlobalContext } from '../GlobalContext';
 
-import './style.scss';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +12,7 @@ function Cart() {
   };
 
   return (
-    <div>
+    <div className='cart'>
       {cart.length === 0 ? (
         <p className='mb-0'>Your cart is empty.</p>
       ) : (

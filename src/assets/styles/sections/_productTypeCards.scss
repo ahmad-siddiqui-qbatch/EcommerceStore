@@ -1,5 +1,3 @@
-@import "../../../assets/styles/style.scss";
-
 .product-type-cards {
   .card {
     position: relative;
@@ -16,6 +14,11 @@
       .background-image{
         transform: scale(1.2);
       }
+    }
+    @include media-max-width(lg){
+    &:nth-child(3){
+      border-left: 0;
+    }
     }
     .background-image {
       width: 100%;

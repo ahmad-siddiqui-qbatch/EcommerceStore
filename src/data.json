@@ -20,15 +20,6 @@
       { "text": "Home", "href": "/" },
       { "text": "Shop", "href": "/shop/all" },
       { "text": "Sale", "href": "/sale/all" },
-      {
-        "text": "Products",
-        "dropdownItems": [
-          { "text": "Products", "href": "#action/3.1" },
-          { "text": "Another action", "href": "#action/3.2" },
-          { "text": "Something", "href": "#action/3.3" },
-          { "text": "Separated link", "href": "#action/3.4" }
-        ]
-      },
       { "text": "Cart", "href": "/cart" },
       { "text": "Blog", "href": "/blog" }
     ],

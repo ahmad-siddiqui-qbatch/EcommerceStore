@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useGlobalContext } from '../../GlobalContext';
-import './style.scss';
 
 const WishListButton = ({ productId }) => {
   const { addToWishlist, removeFromWishlist, isProductInWishlist } = useGlobalContext();

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Harry Potter Name Generator</title>
+</head>
+
+<body>
+  <h1>Harry Potter Name Generator</h1>
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" placeholder="Enter your first name">
+  <br>
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" placeholder="Enter your last name">
+  <br>
+  <button id="generate">Generate Name</button>
+  <p id="result"></p>
+
+  <script>
+    function generateName(firstName, lastName) {
+      const prefix = [
+        "Albus",
+        "Severus",
+        "Hermione",
+        "Sirius",
+        "Remus",
+        "Minerva",
+        "Fleur",
+        "Draco",
+        "Luna",
+        "Neville",
+        "Bellatrix",
+        "Lucius",
+        "Fred",
+        "George",
+        "Molly",
+        "Arthur",
+        "Ginny",
+        "Ron",
+        "Viktor",
+        "Nymphadora",
+        "Kingsley",
+        "Dolores",
+        "Horace",
+        "Pomona",
+        "Rubeus",
+        "Cedric",
+        "Gellert",
+        "Alastor",
+        "Narcissa",
+        "Regulus",
+        "Andromeda",
+        "Ted",
+        "Augusta",
+        "Xenophilius",
+        "Ernie",
+        "Oliver",
+        "Lavender",
+        "Seamus",
+        "Pansy",
+        "Blaise",
+        "Lavender",
+        "Cornelius",
+        "Rufus",
+        "Arabella",
+        "Dedalus",
+        "Filius",
+        "Aurora",
+        "Charity",
+        "Gilderoy",
+        "Madam",
+        "Hagrid",
+        "Ollivander",
+        "Argus",
+        "Bathilda",
+        "Septima",
+        "Xenophilius",
+        "Rufus",
+        "Pomfrey",
+        "Flitwick",
+        "Trelawney",
+        "Sprout",
+        "Slughorn",
+        "Grindelwald",
+        "Scrimgeour",
+        "Aberforth",
+        "Madam",
+        "Professor",
+        "Nearly",
+        "Rita",
+        "Mundungus",
+        "Dedalus",
+        "Stan",
+        "Millicent",
+        "Igor",
+        "Quirinus",
+        "Xeno",
+        "Dorcas",
+        "Sturgis",
+        "Emmeline",
+        "Dirk",
+        "Elphias",
+        "Rita",
+        "Marvolo",
+        "Morgana",
+        "Florean",
+        "Pius",
+        "Caradoc",
+        "Kendra",
+        "Muriel",
+        "Barty",
+        "Fenrir",
+        "Belladonna",
+        "Elladora",
+        "Ignatius",
+        "Rodolphus",
+        "Rabastan",
+        "Alecto",
+        "Amycus",
+        "Corban",
+        "Gervaise"
+      ]
+
+      const suffix = [
+        "Black",
+        "Potter",
+        "Granger",
+        "Malfoy",
+        "Weasley",
+        "Lestrange",
+        "Snape",
+        "Dumbledore",
+        "Lovegood",
+        "Longbottom",
+        "Crouch",
+        "Tonks",
+        "Hagrid",
+        "Ollivander",
+        "Bones",
+        "Pomfrey",
+        "Flitwick",
+        "Trelawney",
+        "Sprout",
+        "Slughorn",
+        "Voldemort",
+        "Scrimgeour",
+        "Bagshot",
+        "Moody",
+        "Creevey",
+        "Delacour",
+        "Gudgeon",
+        "Gryffindor",
+        "Slytherin",
+        "Ravenclaw",
+        "Hufflepuff",
+        "Pettigrew",
+        "Umbridge",
+        "Diggory",
+        "Shacklebolt",
+        "Lupin",
+        "Lynch",
+        "Carrow",
+        "Burbage",
+        "Abbott",
+        "Brown",
+        "Creevey",
+        "Crouch",
+        "Diggory",
+        "Figg",
+        "Flume",
+        "Fletcher",
+        "Fudge",
+        "Goyle",
+        "Goshawk",
+        "Jordan",
+        "Jugson",
+        "Karkaroff",
+        "Krum",
+        "Lynch",
+        "Macmillan",
+        "Nott",
+        "Ogden",
+        "Parkinson",
+        "Patil",
+        "Quirrell",
+        "Rookwood",
+        "Rowle",
+        "Selwyn",
+        "Spinks",
+        "Thomas",
+        "Umbridge",
+        "Warrington",
+        "Yaxley",
+        "Zabini",
+        "Wood",
+        "Pince",
+        "Rosmerta",
+        "Malkin",
+        "Puddifoot",
+        "Zeller",
+        "Edgecombe",
+        "Maxime",
+        "Binns",
+        "McGonagall",
+        "Sinistra",
+        "Kettleburn",
+        "Burbage",
+        "Tofty",
+        "Vector"
+      ]
+        ;
+
+      let randomPrefix, randomSuffix;
+      do {
+        randomPrefix = prefix[Math.floor(Math.random() * prefix.length)];
+        randomSuffix = suffix[Math.floor(Math.random() * suffix.length)];
+      } while (randomPrefix === lastName || randomSuffix === firstName);
+
+      return randomPrefix + " " + randomSuffix;
+    }
+    function displayGeneratedName() {
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+      const resultElement = document.getElementById("result");
+
+      if (firstName && lastName) {
+        const generatedName = generateName(firstName, lastName);
+        resultElement.textContent = "Your Harry Potter name is: " + generatedName;
+      } else {
+        resultElement.textContent = "Please enter both your first name and last name.";
+      }
+    }
+
+    // Add an event listener to the button
+    const generateButton = document.getElementById("generate");
+    generateButton.addEventListener("click", displayGeneratedName);
+  </script>
+</body>
+
+</html>

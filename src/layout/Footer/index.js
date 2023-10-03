@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Container, FormControl, Row } from 'react-bootstrap';
 
-import './style.scss';
 import { Link } from 'react-router-dom';
 
 const index = () => {
@@ -10,7 +9,7 @@ const index = () => {
       <footer>
         <Container>
           <Row>
-            <Col>
+            <Col lg={3}>
               <h5 className='heading'>CONTACT US</h5>
               <ul>
                 <li><h5>Add:</h5>4 Copley Place, 7th Floor, Boston,MA 6</li>
@@ -19,7 +18,7 @@ const index = () => {
                 <li><h5>Email</h5><a href='mailto: sales@demati.com'>sales@demati.com</a></li>
               </ul>
             </Col>
-            <Col>
+            <Col lg={3} md={6}>
               <h5 className='heading'>CATEGORIES</h5>
               <ul>
                 <li><Link to='/'>Tops</Link></li>
@@ -30,7 +29,7 @@ const index = () => {
                 <li><Link to='/'>Shorts</Link></li>
               </ul>
             </Col>
-            <Col>
+            <Col lg={3} md={6}>
               <h5 className='heading'>Services</h5>
               <ul>
                 <li><Link to='/'>Sale</Link></li>
@@ -41,7 +40,7 @@ const index = () => {
                 <li><Link to='/'>Gift Cards</Link></li>
               </ul>
             </Col>
-            <Col>
+            <Col lg={3}>
               <h5 className='heading'>JOIN US</h5>
               <p>New subscribers receive 10% off their first purchase</p>
               <div className='d-flex'>

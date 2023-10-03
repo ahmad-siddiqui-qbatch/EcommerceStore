@@ -3,32 +3,42 @@ import { Container } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Products from '../../commonComponents/Products';
-// import product1 from '../../assets/media/product-1.jpeg';
-// import Rating from '../commonComponents/Rating';
-// import ProductPrice from '../commonComponents/Price';
 
-import './style.scss';
 import { Link } from 'react-router-dom';
 
-const index = () => {
+const tabsData = [
+  {
+    eventKey: 'home',
+    title: 'Best Deal',
+    sectionProductCount: 4,
+    pageLink: '/sale/all',
+    section: true,
+    rating: false,
+  },
+  {
+    eventKey: 'profile',
+    title: 'Best Sellers',
+    sectionProductCount: 4,
+    pageLink: '/shop/all',
+    section: true,
+    rating: true,
+  },
+];
+
+const Index = () => {
   return (
     <div>
       <Container>
         <div className='tabs-wrapper'>
           <h2 className='golden-heading text-h1 pb-3'>Spotlight</h2>
-          <Tabs
-            defaultActiveKey="home"
-            id="uncontrolled-tab-example"
-            className="my-3"
-          >
-            <Tab eventKey="home" title="Best Deal">
-            <Products sectionProductCount={4} sale section pageLink="/"/>
-              <Link className='btn btn-primary' to='/'>View More</Link>
-            </Tab>
-            <Tab eventKey="profile" title="Best Sellers">
-            <Products sectionProductCount={4} section pageLink="/" rating/>
-              <Link className='btn btn-primary' to='/'>View More</Link>
-            </Tab>
+          <Tabs defaultActiveKey={tabsData[0].eventKey} id='uncontrolled-tab-example' className='my-3'>
+            {tabsData.map((tab) => (
+              <Tab key={tab.eventKey} eventKey={tab.eventKey} title={tab.title}>
+                <Products sectionProductCount={tab.sectionProductCount} section={tab.section} pageLink={tab.pageLink} rating={tab.rating}
+                />
+                <Link className='btn btn-primary' to={tab.pageLink}>View More</Link>
+              </Tab>
+            ))}
           </Tabs>
         </div>
       </Container>
@@ -36,4 +46,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

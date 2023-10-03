@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.scss';
 
 const ProductPrice = ({ oldPrice, price }) => {
   const isOnSale = oldPrice !== undefined && oldPrice > price;

@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.scss';
 
 const Rating = ({ rating }) => {
   const stars = Array.from({ length: 5 }, (_, index) => (

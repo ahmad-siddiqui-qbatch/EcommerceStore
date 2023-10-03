@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import data from '../../data.json';
-import './style.scss';
 import { useGlobalContext } from '../GlobalContext'; // Import the useGlobalContext hook
 
 import { Col, Row } from 'react-bootstrap';
@@ -38,7 +37,7 @@ function ProductDetails() {
             </p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
             {/* Add the "Add to Cart" button here */}
-            <button className='btn btn-primary' onClick={() => addToCart(selectedProduct)}>Add to cart <i class="fa-solid fa-cart-arrow-down"></i></button>
+            <button className='btn btn-primary' onClick={() => addToCart(selectedProduct)}>Add to cart <i className="fa-solid fa-cart-arrow-down"></i></button>
           </div>
         </Col>
       </Row>
